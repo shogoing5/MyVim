@@ -1,0 +1,21 @@
+  1 "カラーテーマを設定
+  2 colorscheme desert
+  3
+  4 "終了時のウィンドウサイズを保存し、再表示の際適用する。
+  5 let g:save_window_file = expand('~/.vimwinpos')
+  6 augroup SaveWindow
+  7           autocmd!
+  8             autocmd VimLeavePre * call s:save_window()
+  9               function! s:save_window()
+ 10                           let options = [
+ 11                                 \ 'set columns=' . &columns,
+ 12                                 \ 'set lines=' . &lines,
+ 13                                 \ 'winpos ' . getwinposx() . ' ' . getwinposy(),
+ 14                                 \ ]
+ 15                               call writefile(options, g:save_window_file)
+ 16                                 endfunction
+ 17                         augroup END
+ 18
+ 19                         if filereadable(g:save_window_file)
+ 20                                   execute 'source' g:save_window_file
+ 21                          endif
