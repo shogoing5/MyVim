@@ -1,0 +1,169 @@
+{
+	"security.workspace.trust.untrustedFiles": "open",
+	"window.zoomLevel": -1,
+	"editor.renderWhitespace": "all",
+	"[python]": {
+		"editor.formatOnType": true
+	},
+
+	// Vim 設定
+	 	// システムのクリップボードを利用する
+	"vim.useSystemClipboard": true,
+	// 検索にマッチしたテキストをハイライトする
+	"vim.hlsearch": true,
+	// easymotion を有効にする
+	"vim.easymotion": true,
+	// ビジュアルモードで * や # で検索
+	"vim.visualstar": true,
+	// 検索時に大文字小文字を無視する
+	"vim.ignorecase": true,
+	// インクリメンタルサーチ
+	"vim.incsearch": true,
+	// CamelCaseMotion を有効にする
+	"vim.camelCaseMotion.enable": true,
+	// leader キーの設定
+	"vim.leader": "<space>"
+	// キーバインドの設定
+	// 以下の例は実際には使ってないが参考として記述しておく。
+	"vim.normalModeKeyBindingsNonRecursive": [
+		// xのときはレジスタに入れない
+		{
+			"before": ["x"],
+			"after": ["\"", "_", "x"]
+		}, 
+		// sのときはレジスタに入れない
+		{
+			"before": ["s"],
+			"after": ["\"", "_", "s"]
+		},
+
+		// デフォルトの"H"と"L"は使わないので別のものを割り当てる
+		// ^は押しづらいので"H"で行頭
+		{
+			"before": ["H"],
+			"after": ["^"]
+		},
+		// $は押しづらいので"L"で行末
+		{
+			"before": ["L"],
+			"after": ["$"]
+		},
+		// <Leader> + h,j,k,l でウィンドウ移動
+		{
+			"before": ["<Leader>", "h"],
+			"after": ["<C-w>", "h"]
+		},
+		{
+			"before": ["<Leader>", "j"],
+			"after": ["<C-w>", "j"]
+		},
+		{
+			"before": ["<Leader>", "k"],
+			"after": ["<C-w>", "k"]
+		},
+		{
+			"before": ["<Leader>", "l"],
+			"after": ["<C-w>", "l"]
+		},
+		{
+			"before": ["<Leader>", "w"],
+			"commands": [":q"]
+		},
+
+		// タブ移動関係
+		// 左のタブに移動
+		{
+			"before": ["<Leader>", "n"],
+			"after": ["g", "t"]
+		},
+		// 右のタブに移動
+		{
+			"before": ["<Leader>", "p"],
+			"after": ["g", "T"]
+		},
+		// 左のタブに移動（"gt"に対して"gT"は押しづらいので"gr"にしている）
+		{
+			"before": ["g", "r"],
+			"after": ["g", "T"]
+		},
+
+		//グループ
+		//水平に開く
+		{
+			"before": ["<Leader>", "s"],
+			"commands": [":sp"]
+		},
+		//垂直に開く
+		{
+			"before": ["<Leader>", "v"],
+			"commands": [":vs"]
+		},
+
+		// インデント
+		// ">>"を">"にしている
+		{
+			"before": [">"],
+			"commands": ["editor.action.indentLines"]
+		},
+		// "<<"を"<"にしている
+		{
+			"before": ["<"],
+			"commands": ["editor.action.outdentLines"]
+		},
+
+		//定義を見る
+		{
+			"before": ["["],
+			"commands": [
+			  {
+			    "command": "editor.action.peekDefinition"
+			  }
+			]
+		}, 
+	]
+
+	"vim.insertModeKeyBindings": [
+		{
+			"before": ["j", "j"],
+			"after": ["<Esc>"]
+		}
+	]
+	"vim.visualModeKeyBindingsNonRecursive": [
+		// 左端に移動
+		{
+			"before": ["H"],
+			"after": ["0"]
+		},
+		// 右端に移動
+		{
+			"before": ["L"],
+			"after": ["$", "h"]
+		},
+		// インデント
+		// ">>"を">"にしている
+		{
+			"before": [">"],
+			"commands": ["editor.action.indentLines"]
+		},
+		// "<<"を"<"にしている
+		{
+			"before": ["<"],
+			"commands": ["editor.action.outdentLines"]
+		},
+		// マルチカーソル
+		// 選択した文字に対してカーソル追加
+		{
+			"before": ["<C-n>"],
+			"after": ["g", "b"]
+		},
+		// 複数行選択時、各行末にカーソル追加	
+		{
+			"before": ["<C-l>"],
+			"commands": [
+			{
+				"command": "editor.action.insertCursorAtEndOfEachLineSelected"
+			}
+			]
+		}, 
+	],
+}
