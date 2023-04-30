@@ -7,7 +7,7 @@
 	},
 
 	// Vim 設定
-	 	// システムのクリップボードを利用する
+	// システムのクリップボードを利用する
 	"vim.useSystemClipboard": true,
 	// 検索にマッチしたテキストをハイライトする
 	"vim.hlsearch": true,
