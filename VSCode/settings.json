@@ -7,7 +7,7 @@
 	},
 
 	// Vim 設定
-	// システムのクリップボードを利用する
+	 	// システムのクリップボードを利用する
 	"vim.useSystemClipboard": true,
 	// 検索にマッチしたテキストをハイライトする
 	"vim.hlsearch": true,
@@ -22,7 +22,7 @@
 	// CamelCaseMotion を有効にする
 	"vim.camelCaseMotion.enable": true,
 	// leader キーの設定
-	"vim.leader": "<space>"
+	"vim.leader": "<space>",
 	// キーバインドの設定
 	// 以下の例は実際には使ってないが参考として記述しておく。
 	"vim.normalModeKeyBindingsNonRecursive": [
@@ -120,14 +120,14 @@
 			  }
 			]
 		}, 
-	]
+	],
 
 	"vim.insertModeKeyBindings": [
 		{
 			"before": ["j", "j"],
 			"after": ["<Esc>"]
 		}
-	]
+	],
 	"vim.visualModeKeyBindingsNonRecursive": [
 		// 左端に移動
 		{
@@ -166,4 +166,5 @@
 			]
 		}, 
 	],
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
 }
